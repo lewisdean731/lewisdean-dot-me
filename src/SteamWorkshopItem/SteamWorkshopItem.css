@@ -1,0 +1,13 @@
+.SteamWorkshopItem {
+  width: 30%;
+  margin: 10%%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 2%;
+  border: 2px round solid #EBEBEB;
+  box-shadow: 0 2px 3px #EBEBEB;
+  padding: 2%;
+  float: left
+}
+
+/** In future, implement @media (prefers-color-scheme: dark) { } **/
