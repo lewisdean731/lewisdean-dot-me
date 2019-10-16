@@ -8,9 +8,10 @@ class App extends Component {
 
       <div className="App">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
+      <container>
         <SteamWorkshopItem
           clickAction='clickAction'
-          image={'/logo192.png'}
+          image={'imagex'}
           title={'title'}
           summary={'summary'}
           views={'views'}
@@ -18,12 +19,13 @@ class App extends Component {
           favourites={'favourites'}/>
         <SteamWorkshopItem
           clickAction='clickAction'
-          image={'/logo192.png'}
+          image={'imagex'}
           title={'title'}
           summary={'summary'}
           views={'views'}
           subscribers={'subscirbers'}
           favourites={'favourites'}/>
+          </container>
       </div>
 
     );

@@ -1,13 +1,12 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import './SteamWorkshopItem.css'
 
 const steamWorkshopItem = (props) => {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="bottom" src={props.image} />
-      <Card.Body>
+    <Card className="bg-dark text-white SteamWorkshopItem" onClick={props.clickAction}>
+      <Card.Img src={props.image} alt="Card image"/>
+      <Card.ImgOverlay>
         <Card.Title><p> I'm a Steam Workshop item!{props.title}</p></Card.Title>
         <Card.Text>
           <p>{props.summary}</p>
@@ -15,8 +14,8 @@ const steamWorkshopItem = (props) => {
           <p>{props.subscribers}</p>
           <p>{props.favourites}</p>
         </Card.Text>
-        <Button onClick={props.clickAction} variant="primary">Go somewhere</Button>
-      </Card.Body>
+        <Card.Text>Last updated 3 mins ago</Card.Text>
+      </Card.ImgOverlay>
     </Card>
   );
 }
