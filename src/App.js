@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import SteamWorkshopItem from './SteamWorkshopItem/SteamWorkshopItem';
+import SteamWorkshopItem from './Components/SteamWorkshopItem/SteamWorkshopItem';
 
 class App extends Component {
   render() {
