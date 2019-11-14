@@ -1,6 +1,5 @@
 .SteamWorkshopItem {
-  width: 100%;
-  padding: 5%;
+  width: 18rem;
 }
 
 /** In future, implement @media (prefers-color-scheme: dark) { } **/
