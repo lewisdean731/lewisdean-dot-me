@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 import classes from './App.module.css';
+import Aux from './hoc/Aux';
 import SteamWorkshopItem from './components/SteamWorkshop/SteamWorkshopItem/SteamWorkshopItem';
+import Landing from './components/Landing/Landing';
 
 class App extends Component {
   render() {
     return (
-
-      <div className={classes.App}>
+      <Aux>
+        <Landing text={'Welcome'}></Landing>
+        <div className={classes.App}>
           <SteamWorkshopItem
             clickAction='clickAction'
             image={'imagex'}
@@ -17,7 +20,9 @@ class App extends Component {
             subscribers={'subscirbers'}
             favourites={'favourites'}
           />
-      </div>
+        </div>
+      </Aux>
+
 
     );
   }
