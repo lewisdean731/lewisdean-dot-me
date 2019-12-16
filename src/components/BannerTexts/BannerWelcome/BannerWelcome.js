@@ -7,7 +7,7 @@ const BannerWelcome = (props) => {
             Classes.White,
             Classes.Title,
             Classes.BoxSkewed,
-            Classes.BoxRed].join(' ')}>
+            Classes.BoxBlue].join(' ')}>
             {props.text}
         </h1>
     )
