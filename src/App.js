@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Classes from './App.module.css';
+import Classes from './App.module.scss';
 import Aux from './hoc/Aux';
 import SteamWorkshopItem from './components/SteamWorkshop/SteamWorkshopItem/SteamWorkshopItem';
 import Landing from './containers/Landing/Landing';
