@@ -1,10 +1,10 @@
 import React from 'react';
-import {Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
+import {Row, Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
 import classes from './SteamWorkshopItem.module.css';
 
 const steamWorkshopItem = (props) => {
   return (
-    <div className={classes.SteamWorkshopItem}>
+    <Row className={classes.SteamWorkshopItem}>
       <div className={classes.Inner}>
         <div className={classes.Front}>
           <img
@@ -41,9 +41,7 @@ const steamWorkshopItem = (props) => {
           </Card>
         </div>
       </div>
-
-
-    </div>
+    </Row>
 
   );
 }
