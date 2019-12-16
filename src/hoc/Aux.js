@@ -1,7 +1,9 @@
 import React from 'react';
+import Classes from '../App.module.scss';
+
 const Aux = (props) => {
     return(
-    <Container-fluid className={props.className}>
+    <Container-fluid className={Classes.App}>
         {props.children}
     </Container-fluid>
     )
