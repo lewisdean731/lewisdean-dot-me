@@ -1,10 +1,9 @@
 import React from 'react';
-
 const Aux = (props) => {
     return(
-    <div className={props.className}>
+    <Container-fluid className={props.className}>
         {props.children}
-    </div>
+    </Container-fluid>
     )
 }
 
