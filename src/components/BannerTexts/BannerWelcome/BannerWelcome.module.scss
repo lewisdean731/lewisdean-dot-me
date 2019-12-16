@@ -1,0 +1,39 @@
+.Title {
+    text-align: left;
+    font-family: monospace;
+    font-size: 10em;
+}
+
+// Box and Box Colours
+.BoxRegular {
+    padding: 50px;
+    height:250px;
+    margin: 40px;
+}
+
+.BoxSkewed {
+    padding: 50px;
+    height:250px;
+    margin: 40px;
+    max-width: 60%;
+    // Slanted Borders
+    // https://stackoverflow.com/questions/19147241/skewed-borders-on-a-div
+    transform: skew(-5deg) rotate(0deg);
+    -webkit-transform: skew(-5deg) rotate(0deg);
+    -moz-transform: skew(-5deg) rotate(0deg);
+}
+
+.BoxRed {
+    background-color: #E94F37;
+}
+.BoxBlue {
+    background-color: #008482;
+}
+
+// Text Colours
+.White {
+    color: #EDEDED;
+}
+.Red {
+    color: #E94F37;
+}
