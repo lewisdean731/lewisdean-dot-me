@@ -1,3 +1,11 @@
-const aux = (props) => props.children;
+import React from 'react';
 
-export default aux;
+const Aux = (props) => {
+    return(
+    <div className={props.className}>
+        {props.children}
+    </div>
+    )
+}
+
+export default Aux;
