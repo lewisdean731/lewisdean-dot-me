@@ -3,9 +3,13 @@ import Classes from './BannerWelcome.module.scss';
 
 const BannerWelcome = (props) => {
     return (
-        <div className={[Classes.Box, Classes.BoxRed].join(' ')}>
-            <h1 className={[Classes.White, Classes.Title].join(' ')}>{props.text}</h1>
-        </div>
+        <h1 className={[
+            Classes.White,
+            Classes.Title,
+            Classes.BoxSkewed,
+            Classes.BoxRed].join(' ')}>
+            {props.text}
+        </h1>
     )
 }
 
