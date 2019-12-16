@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import classes from './App.module.css';
 import Aux from './hoc/Aux';
 import SteamWorkshopItem from './components/SteamWorkshop/SteamWorkshopItem/SteamWorkshopItem';
-import Landing from './components/Landing/Landing';
+import Landing from './containers/Landing/Landing';
 
 class App extends Component {
   render() {
