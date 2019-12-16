@@ -4,6 +4,7 @@ import BannerWelcome from '../../components/BannerTexts/BannerWelcome/BannerWelc
 const landing = (props) => {
     return (
         <div>
+            <p>Sidebar, Nav</p>
             <BannerWelcome text={"Welcome"}></BannerWelcome>
         </div>
     )
