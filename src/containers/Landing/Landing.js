@@ -1,10 +1,10 @@
 import React from 'react';
-import classes from './Landing.module.css';
+import BannerWelcome from '../../components/BannerTexts/BannerWelcome/BannerWelcome'
 
 const landing = (props) => {
     return (
         <div>
-            <h3 className={classes.Red}>{props.text}</h3>
+            <BannerWelcome text={"Welcome"}></BannerWelcome>
         </div>
     )
 
