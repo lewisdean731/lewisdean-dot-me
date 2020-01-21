@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 
 import Classes from './App.module.scss';
 import SteamWorkshopItem from './components/SteamWorkshop/SteamWorkshopItem/SteamWorkshopItem';
-import Landing from './containers/Landing/Landing';
+import Layout from './containers/Layout/Layout';
 
 class App extends Component {
   render() {
     return (
       <Container-fluid>
-        <Landing text={'Welcome'}></Landing>
+        <Layout text={'Welcome'}></Layout>
+
+
+
         <SteamWorkshopItem
           clickAction='clickAction'
           image={'imagex'}
