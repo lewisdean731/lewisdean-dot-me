@@ -9,13 +9,11 @@ class NavigationItems extends Component {
 
     render() {
         return (
-            <Row>
-                <ul className={classes.NavigationItems}>
-                    <NavigationItem link="/" active>one</NavigationItem>
-                    <NavigationItem link="/">two</NavigationItem>
-                    <NavigationItem link="/">three</NavigationItem>
-                    <NavigationItem link="/">four</NavigationItem>
-                </ul>
+            <Row className={classes.NavigationItems}>
+                <NavigationItem link="/" active>one</NavigationItem>
+                <NavigationItem link="/">two</NavigationItem>
+                <NavigationItem link="/">three</NavigationItem>
+                <NavigationItem link="/">four</NavigationItem>
             </Row>
         );
     }

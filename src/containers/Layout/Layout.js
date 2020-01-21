@@ -9,7 +9,7 @@ const landing = (props) => {
         <Container-fluid>
             <Row>
                 <Col>
-                    <BannerWelcome text={"Lewis Dean"}></BannerWelcome>
+                    <BannerWelcome text={"Test"}></BannerWelcome>
                 </Col>
             </Row>
             <Row>
