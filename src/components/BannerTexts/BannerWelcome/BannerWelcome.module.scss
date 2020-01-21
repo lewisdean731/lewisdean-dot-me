@@ -9,9 +9,20 @@
 
 }
 
-// Box and Box Colours
 .Box {
-    padding: 50px;
-    height:250px;
-    margin: 40px;
+    padding:25px;
+    height: auto;
+    margin: 20px;
+}
+
+@media (max-width: 1000px) {
+    .Title {
+        font-size: 5em;
+    }
+
+    .Box {
+        padding: 0%;
+        margin: 0;
+        width: 100%;
+    }
 }
