@@ -1,17 +1,14 @@
 @import '../../../../../styles/resources.scss';
 
 .NavigationItem {
-    margin: 10px 0;
+    font-size: 1.5em;
     box-sizing: border-box;
-    display: block;
     width: 100%;
 }
 
 .NavigationItem a {
     color: $colour-blue;
     text-decoration: none;
-    width: 100%;
-    box-sizing: border-box;
     display: block;
 }
 
