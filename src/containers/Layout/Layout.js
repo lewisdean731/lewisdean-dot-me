@@ -12,26 +12,30 @@ class Layout extends Component {
     }
 
     ActiveContent = () => {
-        if (this.state.activenavItem === "one") {
-            return <TextCentrepiece text={"one"}></TextCentrepiece>;
-        }
-        else if (this.state.activenavItem === "two") {
-            return <TextCentrepiece text={"two"}></TextCentrepiece>;
 
-        }
-        else {
-            return <TextCentrepiece text={"uh oh"}></TextCentrepiece>;
-
+        switch (this.state.activenavItem) {
+            case "one":
+                return <TextCentrepiece text={"one"}></TextCentrepiece>;
+            case "two":
+                return <TextCentrepiece text={"two"}></TextCentrepiece>;
+            case "three":
+                return <TextCentrepiece text={"three"}></TextCentrepiece>;
+            case "four":
+                return <TextCentrepiece text={"four"}></TextCentrepiece>;
+            default:
+                return <TextCentrepiece text={"Content not found..."}></TextCentrepiece>;
         }
     }
 
     NavigationItemClickHandler = (event) => {
-        console.log('nav item clicked:')
-        console.log(event)
+        console.log('nav item clicked: ' + event)
         this.setState( {activenavItem: event} );
     }
 
     render() {
+
+        let activeContent = this.ActiveContent();
+
         return (
             <Aux>
                 <Container-fluid>
@@ -50,7 +54,7 @@ class Layout extends Component {
                     </Row>
                 </Container-fluid>
                 <Aux>
-
+                    {activeContent}
                 </Aux>
             </Aux>
         );
