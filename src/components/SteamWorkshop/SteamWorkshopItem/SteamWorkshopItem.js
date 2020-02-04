@@ -13,28 +13,28 @@ const steamWorkshopItem = (props) => {
           />
         </div>
         <div className={classes.Backing}>
-          <Card className={classes.BackingCard} onClick={props.clickAction}>
+          <Card className={classes.BackingCard} >
             <Card.Body>
               <Card.Title>
-                <p>{props.title}</p>
+                {props.title}
               </Card.Title>
               <hr />
               <Card.Text>
-                <p>{props.summary}</p>
+                {props.summary}
               </Card.Text>
             </Card.Body>
             <ListGroup>
               <ListGroupItem>
-                <p>{props.views}</p>
+                {props.views}
               </ListGroupItem>
               <ListGroupItem>
-                <p>{props.subscribers}</p>
+                {props.subscribers}
               </ListGroupItem>
               <ListGroupItem>
-                <p>{props.favourites}</p>
+                {props.favourites}
               </ListGroupItem>
               <ListGroupItem>
-                <Button variant="primary">View on Workshop</Button>
+                <Button onClick={props.clickAction} variant="primary">View on Workshop</Button>
               </ListGroupItem>
             </ListGroup>
 
