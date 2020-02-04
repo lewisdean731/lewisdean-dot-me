@@ -3,8 +3,7 @@
 .Toolbar {
     height: 56px;
     width: 100%;
-    position: fixed;
-    background-color: $colour-grey;
+    background-color: $colour-light-grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,11 +16,7 @@
     height: 100%;
 }
 
-.Logo {
-    height: 80%;
-}
-
-@media (max-width: 499px) {
+@media (max-width: 999px) {
     .DesktopOnly {
         display: none;
     }
