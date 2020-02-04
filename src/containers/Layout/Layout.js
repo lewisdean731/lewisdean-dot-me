@@ -5,6 +5,9 @@ import {Row, Col} from 'react-bootstrap';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import Aux from '../../hoc/Aux';
 
+// Layouts
+import About from '../Layout/About/About'
+
 class Layout extends Component {
 
     state = {
@@ -15,7 +18,7 @@ class Layout extends Component {
 
         switch (this.state.activenavItem) {
             case "one":
-                return <TextCentrepiece text={"one"}></TextCentrepiece>;
+                return <About />;
             case "two":
                 return <TextCentrepiece text={"two"}></TextCentrepiece>;
             case "three":
