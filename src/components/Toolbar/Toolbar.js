@@ -4,7 +4,7 @@ import NavigationItems from '../UI/Navigation/NavigationItems/NavigationItems';
 
 const toolbar = (props) => (
         <nav className={[classes.DesktopOnly, classes.Toolbar].join(' ')}>
-            <NavigationItems></NavigationItems>
+            <NavigationItems active={props.active}clicked={props.clicked}></NavigationItems>
         </nav>
 );
 
