@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-
-import Classes from './App.module.scss';
 import SteamWorkshopItem from './components/SteamWorkshop/SteamWorkshopItem/SteamWorkshopItem';
 import Layout from './containers/Layout/Layout';
+import Aux from './hoc/Aux';
 
 class App extends Component {
   render() {
     return (
-      <Container-fluid>
-        <Layout text={'Welcome'}></Layout>
-
-
-
+      <Aux>
+          <Layout text={'Welcome'}></Layout>
         <SteamWorkshopItem
           clickAction='clickAction'
           image={'imagex'}
@@ -21,9 +17,7 @@ class App extends Component {
           subscribers={'subscirbers'}
           favourites={'favourites'}
         />
-      </Container-fluid>
-
-
+      </Aux>
     );
   }
 }
