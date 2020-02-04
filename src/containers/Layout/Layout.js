@@ -6,7 +6,8 @@ import Toolbar from '../../components/Toolbar/Toolbar';
 import Aux from '../../hoc/Aux';
 
 // Layouts
-import About from '../Layout/About/About'
+import About from './About/About'
+import Workshop from './Workshop/Workshop'
 
 class Layout extends Component {
 
@@ -17,12 +18,12 @@ class Layout extends Component {
     ActiveContent = () => {
 
         switch (this.state.activenavItem) {
-            case "one":
+            case "About":
                 return <About />;
             case "two":
                 return <TextCentrepiece text={"two"}></TextCentrepiece>;
-            case "three":
-                return <TextCentrepiece text={"three"}></TextCentrepiece>;
+            case "Workshop":
+                return <Workshop />;
             case "four":
                 return <TextCentrepiece text={"four"}></TextCentrepiece>;
             default:
