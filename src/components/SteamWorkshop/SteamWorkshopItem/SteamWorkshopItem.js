@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row, Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
-import classes from './SteamWorkshopItem.module.css';
+import classes from './SteamWorkshopItem.module.scss';
 
 const steamWorkshopItem = (props) => {
   return (

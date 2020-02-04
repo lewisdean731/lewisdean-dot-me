@@ -1,6 +1,8 @@
+@import 'styles/resources.scss';
+
 body {
   text-align: center;
-  background-color: #43433E;
+  background-color: $colour-white;
 }
 
 .App-logo {
@@ -8,16 +10,16 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:$colour-grey;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $colour-white;
 }
 
 .App-link {
-  color: #09d3ac;
+  color: $colour-blue;
 }

@@ -1,5 +1,7 @@
+@import '../../../styles/resources.scss';
+
 .TextCenterpiece{
-    color: #EDEDED;
+    color: $colour-grey;
     margin: auto;
     padding: 20px;
     text-align: center;

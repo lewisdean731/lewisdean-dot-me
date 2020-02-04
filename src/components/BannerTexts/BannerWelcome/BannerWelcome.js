@@ -4,10 +4,8 @@ import Classes from './BannerWelcome.module.scss';
 const BannerWelcome = (props) => {
     return (
         <h1 className={[
-            Classes.White,
             Classes.Title,
-            Classes.BoxSkewed,
-            Classes.BoxBlue].join(' ')}>
+            Classes.Box].join(' ')}>
             {props.text}
         </h1>
     )
