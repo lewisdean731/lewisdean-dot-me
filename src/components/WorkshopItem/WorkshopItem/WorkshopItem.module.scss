@@ -1,4 +1,4 @@
-.SteamWorkshopItem {
+.WorkshopItem {
   background-color: transparent;
   width: 35rem;
   height: 25rem;
@@ -6,7 +6,7 @@
 }
 @import "../../../styles/resources.scss";
 
-.SteamWorkshopItem .Inner {
+.WorkshopItem .Inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -16,26 +16,26 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.SteamWorkshopItem:hover .Inner {
+.WorkshopItem:hover .Inner {
   transform: rotateY(180deg);
 }
 
-.SteamWorkshopItem .Front,
-.SteamWorkshopItem .Backing {
+.WorkshopItem .Front,
+.WorkshopItem .Backing {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
 
-.SteamWorkshopItem .Front {
+.WorkshopItem .Front {
 }
 
-.SteamWorkshopItem .Backing {
+.WorkshopItem .Backing {
   transform: rotateY(180deg);
 }
 
-.SteamWorkshopItem .BackingCard {
+.WorkshopItem .BackingCard {
   height: 100%;
 }
 
