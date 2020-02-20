@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "node-sass": "^4.13.0",
+    "prettier": "^1.19.1",
     "react": "^16.10.2",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.10.2",
@@ -14,7 +15,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier:base": "prettier 'src/**' '*.md' '*.js' tsconfig.json",
+    "prettier:check": "npm run prettier:base -- --list-different",
+    "prettier:write": "npm run prettier:base -- --write"
   },
   "eslintConfig": {
     "extends": "react-app"

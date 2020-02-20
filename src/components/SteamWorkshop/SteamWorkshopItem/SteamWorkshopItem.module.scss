@@ -4,7 +4,7 @@
   height: 25rem;
   perspective: 100rem;
 }
-@import '../../../styles/resources.scss';
+@import "../../../styles/resources.scss";
 
 .SteamWorkshopItem .Inner {
   position: relative;
@@ -13,14 +13,15 @@
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .SteamWorkshopItem:hover .Inner {
   transform: rotateY(180deg);
 }
 
-.SteamWorkshopItem .Front, .SteamWorkshopItem .Backing {
+.SteamWorkshopItem .Front,
+.SteamWorkshopItem .Backing {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -37,8 +38,5 @@
 .SteamWorkshopItem .BackingCard {
   height: 100%;
 }
-
-
-
 
 /** In future, implement @media (prefers-color-scheme: dark) { } **/

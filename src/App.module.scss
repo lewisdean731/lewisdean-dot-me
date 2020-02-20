@@ -1,4 +1,4 @@
-@import 'styles/resources.scss';
+@import "styles/resources.scss";
 
 body {
   text-align: center;
@@ -10,7 +10,7 @@ body {
 }
 
 .App-header {
-  background-color:$colour-grey;
+  background-color: $colour-grey;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

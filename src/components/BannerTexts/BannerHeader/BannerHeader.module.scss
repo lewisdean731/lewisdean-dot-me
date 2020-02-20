@@ -1,26 +1,25 @@
-@import '../../../styles/resources.scss';
+@import "../../../styles/resources.scss";
 
 .Title {
-    text-align: center;
-    font-family: monospace;
-    font-size: 10em;
-    color: $colour-white;
-    background-color: $colour-blue;
-
+  text-align: center;
+  font-family: monospace;
+  font-size: 10em;
+  color: $colour-white;
+  background-color: $colour-blue;
 }
 
 .Box {
-    padding:25px;
-    height: 100%;
+  padding: 25px;
+  height: 100%;
 }
 
 @media (max-width: 1000px) {
-    .Title {
-        font-size: 5em;
-    }
+  .Title {
+    font-size: 5em;
+  }
 
-    .Box {
-        padding: 0%;
-        width: 100%;
-    }
+  .Box {
+    padding: 0%;
+    width: 100%;
+  }
 }
