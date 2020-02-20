@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BannerWelcome from '../../components/BannerTexts/BannerWelcome/BannerWelcome';
-import TextCentrepiece from '../../components/Texts/TextCenterpiece/TextCenterpiece';
+import BannerHeader from '../../components/BannerTexts/BannerHeader/BannerHeader';
+import TextCentrepiece from '../../components/Texts/TextSubheader/TextSubheader';
 import {Row, Col} from 'react-bootstrap';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import Aux from '../../hoc/Aux';
@@ -45,16 +45,11 @@ class Layout extends Component {
                 <Container-fluid>
                     <Row>
                         <Col>
-                            <BannerWelcome text={"Test"}></BannerWelcome>
+                            <BannerHeader text={"Test"}></BannerHeader>
                         </Col>
                     </Row>
                     <Row>
                         <Toolbar clicked={this.NavigationItemClickHandler} active={this.state.activenavItem}></Toolbar>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <TextCentrepiece text={"can a file or env var go here?"}></TextCentrepiece>
-                        </Col>
                     </Row>
                 </Container-fluid>
                 <Aux>

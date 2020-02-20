@@ -1,7 +1,7 @@
 import React from 'react';
-import Classes from './BannerWelcome.module.scss';
+import Classes from './BannerHeader.module.scss';
 
-const BannerWelcome = (props) => {
+const BannerHeader = (props) => {
     return (
         <h1 className={[
             Classes.Title,
@@ -11,4 +11,4 @@ const BannerWelcome = (props) => {
     )
 }
 
-export default BannerWelcome;
+export default BannerHeader;

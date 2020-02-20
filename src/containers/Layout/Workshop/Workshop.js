@@ -12,13 +12,13 @@ const workshop = () => {
         </Col>
       </Row>
       <SteamWorkshopItem
-      clickAction='clickAction'
-      image={'imagex'}
-      title={'title'}
-      summary={'summary'}
-      views={'views'}
-      subscribers={'subscirbers'}
-      favourites={'favourites'}
+          clickAction='clickAction'
+          image={'imagex'}
+          title={'title'}
+          summary={'summary'}
+          views={'views'}
+          subscribers={'subscirbers'}
+          favourites={'favourites'}
       />
     </Aux>
 
