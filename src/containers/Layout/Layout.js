@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
+import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
 import TextCentrepiece from "../../components/Texts/TextSubheader/TextSubheader";
 import { Row, Col } from "react-bootstrap";
 import Toolbar from "../../components/Toolbar/Toolbar";
@@ -55,6 +56,11 @@ class Layout extends Component {
           </Row>
         </Container-fluid>
         <Aux>{activeContent}</Aux>
+        <Row>
+            <Col>
+              <BannerFooter text={"Test"}></BannerFooter>
+            </Col>
+        </Row>
       </Aux>
     );
   }
