@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import TextSubheader from "../../Texts/TextParagraph/TextParagraph";
+import TextHeader from "../../Texts/TextHeader/TextHeader";
 import TextParagraph from "../../Texts/TextParagraph/TextParagraph";
 import Aux from "../../../hoc/Aux";
 import classes from "./WorkshopItem.module.scss";
@@ -10,7 +10,7 @@ const WorkshopItem = props => {
     <Aux>
       <Row>
         <Col>
-          <TextSubheader>{props.title}</TextSubheader>
+          <TextHeader>{props.title}</TextHeader>
         </Col>
       </Row>
       <Row>
