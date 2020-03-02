@@ -19,6 +19,9 @@ const NavigationItems = props => {
       <NavigationItem clicked={props.clicked} link="#" active={props.active}>
         four
       </NavigationItem>
+      <NavigationItem clicked={props.clicked} link="#" active={props.active}>
+        Contact
+      </NavigationItem>
       <Col md />
     </Row>
   );
