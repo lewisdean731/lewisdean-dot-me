@@ -33,6 +33,7 @@ const WorkshopItem = props => {
         <Col>
           <TextParagraph>
             {props.description}
+            <hr />
             <a href={props.steam_link}>{props.steam_link_description}</a>
           </TextParagraph>
         </Col>
