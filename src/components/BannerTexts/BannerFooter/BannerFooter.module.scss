@@ -1,9 +1,13 @@
 @import "../../../styles/resources.scss";
 
 .Footer {
-  bottom: 0;
   text-align: center;
   color: $colour-white;
+  margin-top: 50px;
+  flex-shrink: 0;
+  div {
+    padding-top: 20px;
+  }
 }
 
 .Box {
@@ -22,6 +26,8 @@
 .Icon:hover {
   color: $colour-light-grey;
 }
+
+
 
 @media (max-width: 1000px) {
   .Title {

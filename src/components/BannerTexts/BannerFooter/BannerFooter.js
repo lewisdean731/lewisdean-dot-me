@@ -23,7 +23,7 @@ const BannerFooter = props => {
       </a>
     </Col>
   </Row>
-  <div class="footer-copyright text-center py-3">
+  <div>
     <p>© 2020 Copyright</p>
     <p>Lewis Dean</p>
   </div>
