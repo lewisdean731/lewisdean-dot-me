@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
 import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
-import TextCentrepiece from "../../components/Texts/TextSubheader/TextSubheader";
+import TextHeader from "../../components/Texts/TextHeader/TextHeader";
 import { Row, Col } from "react-bootstrap";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import Aux from "../../hoc/Aux";
@@ -20,14 +20,16 @@ class Layout extends Component {
       case "About":
         return <About />;
       case "two":
-        return <TextCentrepiece text={"two"}></TextCentrepiece>;
+        return <TextHeader>Two</TextHeader>;
       case "Workshop":
         return <Workshop />;
       case "four":
-        return <TextCentrepiece text={"four"}></TextCentrepiece>;
+        return <TextHeader>Four</TextHeader>;
+      case "Contact":
+        return <TextHeader text={"Contact"}></TextHeader>;
       default:
         return (
-          <TextCentrepiece text={"Content not found..."}></TextCentrepiece>
+          <TextHeader text={"Content not found..."}></TextHeader>
         );
     }
   };
@@ -42,24 +44,22 @@ class Layout extends Component {
 
     return (
       <Aux>
-        <Container-fluid>
-          <Row>
-            <Col>
-              <BannerHeader text={"Test"}></BannerHeader>
-            </Col>
-          </Row>
-          <Row>
-            <Toolbar
-              clicked={this.NavigationItemClickHandler}
-              active={this.state.activenavItem}
-            ></Toolbar>
-          </Row>
-        </Container-fluid>
-        <Aux>{activeContent}</Aux>
         <Row>
-            <Col>
-              <BannerFooter text={"Test"}></BannerFooter>
-            </Col>
+          <Col>
+            <BannerHeader text={"Test"}></BannerHeader>
+          </Col>
+        </Row>
+        <Row>
+          <Toolbar
+            clicked={this.NavigationItemClickHandler}
+            active={this.state.activenavItem}
+          ></Toolbar>
+        </Row>
+        {activeContent}
+        <Row>
+          <Col>
+            <BannerFooter text={"Test"}></BannerFooter>
+          </Col>
         </Row>
       </Aux>
     );
