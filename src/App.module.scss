@@ -3,6 +3,13 @@
 body {
   text-align: center;
   background-color: $colour-white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Flex {
+  flex: 1 0 auto;
 }
 
 .App-logo {
