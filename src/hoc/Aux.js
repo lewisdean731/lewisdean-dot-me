@@ -3,7 +3,7 @@ import Classes from "../App.module.scss";
 
 const Aux = props => {
   return (
-    <Container-fluid className={Classes.Flex}>{props.children}</Container-fluid>
+    <Container-fluid class={Classes.Flex}>{props.children}</Container-fluid>
   );
 };
 

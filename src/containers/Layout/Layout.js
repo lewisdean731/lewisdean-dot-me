@@ -43,25 +43,24 @@ class Layout extends Component {
     let activeContent = this.ActiveContent();
 
     return (
-      <Aux>
-        <Row>
-          <Col>
-            <BannerHeader text={"Test"}></BannerHeader>
-          </Col>
-        </Row>
-        <Row>
-          <Toolbar
-            clicked={this.NavigationItemClickHandler}
-            active={this.state.activenavItem}
-          ></Toolbar>
-        </Row>
-        {activeContent}
-        <Row>
-          <Col>
-            <BannerFooter text={"Test"}></BannerFooter>
-          </Col>
-        </Row>
-      </Aux>
+      <body>
+        <Aux>
+          <Row>
+            <Col>
+              <BannerHeader text={"Test"}></BannerHeader>
+            </Col>
+          </Row>
+          <Row>
+            <Toolbar
+              clicked={this.NavigationItemClickHandler}
+              active={this.state.activenavItem}
+            ></Toolbar>
+          </Row>
+          {activeContent}
+        </Aux>
+        <BannerFooter text={"Test"}></BannerFooter>
+      </body>
+
     );
   }
 }
