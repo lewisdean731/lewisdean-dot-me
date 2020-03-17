@@ -3,7 +3,6 @@ import { Row, Col } from "react-bootstrap";
 import TextHeader from "../../Texts/TextHeader/TextHeader";
 import TextParagraph from "../../Texts/TextParagraph/TextParagraph";
 import Aux from "../../../hoc/Aux";
-import classes from "./WorkshopItem.module.scss";
 
 const WorkshopItem = props => {
   return (
