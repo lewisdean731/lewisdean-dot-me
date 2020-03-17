@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
 import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
 import TextHeader from "../../components/Texts/TextHeader/TextHeader";
+import UnderConstruction from "../../components/placeholders/UnderConstruction/UnderConstruction"
 import { Row, Col } from "react-bootstrap";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import Aux from "../../hoc/Aux";
@@ -20,13 +21,13 @@ class Layout extends Component {
       case "About":
         return <About />;
       case "two":
-        return <TextHeader>Two</TextHeader>;
+        return <UnderConstruction />;
       case "Workshop":
         return <Workshop />;
       case "four":
-        return <TextHeader>Four</TextHeader>;
+        return <UnderConstruction />;
       case "Contact":
-        return <TextHeader text={"Contact"}></TextHeader>;
+        return <UnderConstruction />;
       default:
         return (
           <TextHeader text={"Content not found..."}></TextHeader>
