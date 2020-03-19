@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
 import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
 import TextHeader from "../../components/Texts/TextHeader/TextHeader";
-import UnderConstruction from "../../components/placeholders/UnderConstruction/UnderConstruction"
+import UnderConstruction from "../../components/placeholders/UnderConstruction/UnderConstruction";
 import { Row, Col } from "react-bootstrap";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import Aux from "../../hoc/Aux";
@@ -29,9 +29,7 @@ class Layout extends Component {
       case "Contact":
         return <UnderConstruction />;
       default:
-        return (
-          <TextHeader text={"Content not found..."}></TextHeader>
-        );
+        return <TextHeader text={"Content not found..."}></TextHeader>;
     }
   };
 
@@ -61,7 +59,6 @@ class Layout extends Component {
         </Aux>
         <BannerFooter text={"Test"}></BannerFooter>
       </body>
-
     );
   }
 }

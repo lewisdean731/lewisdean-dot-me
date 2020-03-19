@@ -8,8 +8,7 @@ const workshop = () => {
   return (
     <Aux>
       <Row>
-        <Col>
-        </Col>
+        <Col></Col>
       </Row>
       <WorkshopItem
         title="British Rail Mk3 Coach"

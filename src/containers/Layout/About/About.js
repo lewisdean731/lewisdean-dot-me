@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import TextSubheader from "../../../components/Texts/TextSubheader/TextSubheader";
 import TextHeader from "../../../components/Texts/TextHeader/TextHeader";
 import TextParagraph from "../../../components/Texts/TextParagraph/TextParagraph";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Classes from "./About.module.scss";
 import Aux from "../../../hoc/Aux";
 
@@ -40,8 +40,11 @@ const about = () => {
           </TextParagraph>
         </Col>
         <Col>
-          <p className={[Classes.ProfilePicture, Classes.Placeholder].join(" ")} href="#">
-            <FontAwesomeIcon icon={'user'}/>
+          <p
+            className={[Classes.ProfilePicture, Classes.Placeholder].join(" ")}
+            href="#"
+          >
+            <FontAwesomeIcon icon={"user"} />
           </p>
         </Col>
         <Col></Col>

@@ -2,8 +2,9 @@ import React from "react";
 import Classes from "./TextParagraph.module.scss";
 
 const TextSubheader = props => {
-
-  const className = props.FullWidth ? [Classes.TextSubheader, Classes.FullWidth] : [Classes.TextSubheader];
+  const className = props.FullWidth
+    ? [Classes.TextSubheader, Classes.FullWidth]
+    : [Classes.TextSubheader];
 
   return (
     <div>
