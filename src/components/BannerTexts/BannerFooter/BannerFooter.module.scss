@@ -5,16 +5,13 @@
   color: $colour-white;
   margin-top: 50px;
   flex-shrink: 0;
-  div {
-    padding-top: 20px;
-  }
+
 }
 
 .Box {
   padding: 25px;
-  background-color: $colour-white;
   p {
-    color: $colour-grey;
+    color: $colour-grey
   }
 }
 
@@ -39,3 +36,4 @@
     width: 100%;
   }
 }
+

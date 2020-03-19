@@ -1,0 +1,18 @@
+@import "../../../styles/resources.scss";
+
+.SideDrawer {
+    position: fixed;
+    z-index: 50;
+    height: 100%;
+    width: 300px;
+    background-color: $colour-blue;
+    transition: transform 0.3s ease-out;
+}
+
+.Open {
+    transform: translateX(0)
+}
+
+.Close {
+    transform: translateX(-100%)
+}

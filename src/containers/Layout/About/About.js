@@ -9,7 +9,7 @@ import Aux from "../../../hoc/Aux";
 
 const about = () => {
   return (
-    <Aux>
+    <div>
       <Row>
         <Col>
           <TextHeader>About</TextHeader>
@@ -17,12 +17,12 @@ const about = () => {
       </Row>
       <Row>
         <Col>
-          <TextSubheader>Lorem Ipsum Dolor</TextSubheader>
+          <TextSubheader>Personal Profile</TextSubheader>
         </Col>
       </Row>
       <Row>
         <Col></Col>
-        <Col>
+        <Col md={5}>
           <TextParagraph FullWidth>
             Originally from Cornwall, I moved to Bournemouth to study Software
             Engineering in 2017. I'm currently working as part of an agile
@@ -39,7 +39,7 @@ const about = () => {
             Confluence, and Jira).
           </TextParagraph>
         </Col>
-        <Col>
+        <Col md={3}>
           <p
             className={[Classes.ProfilePicture, Classes.Placeholder].join(" ")}
             href="#"
@@ -49,7 +49,7 @@ const about = () => {
         </Col>
         <Col></Col>
       </Row>
-    </Aux>
+    </div>
   );
 };
 

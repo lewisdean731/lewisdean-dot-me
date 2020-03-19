@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import Classes from "./Layout.module.scss";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
 import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
+import SideDrawer from "../../components/UI/SideDrawer/SideDrawer";
 import TextHeader from "../../components/Texts/TextHeader/TextHeader";
 import UnderConstruction from "../../components/placeholders/UnderConstruction/UnderConstruction";
 import { Row, Col } from "react-bootstrap";
-import Toolbar from "../../components/Toolbar/Toolbar";
+import Toolbar from "../../components/UI/Toolbar/Toolbar";
 import Aux from "../../hoc/Aux";
 
 // Layouts
@@ -55,9 +57,22 @@ class Layout extends Component {
               active={this.state.activenavItem}
             ></Toolbar>
           </Row>
-          {activeContent}
+          <Row className={Classes.FillParentHeight}>
+            <Col md={2}>
+              <SideDrawer />
+            </Col>
+            <Col md={8}>
+              <Row>
+                {activeContent}
+              </Row>
+            </Col>
+            <Col md={2}>
+            </Col>
+          </Row>
         </Aux>
-        <BannerFooter text={"Test"}></BannerFooter>
+        <Row>
+          <BannerFooter text={"Test"}></BannerFooter>
+        </Row>
       </body>
     );
   }
