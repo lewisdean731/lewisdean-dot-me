@@ -13,7 +13,7 @@ import Workshop from "./Workshop/Workshop";
 
 class Layout extends Component {
   state = {
-    activenavItem: "two"
+    activenavItem: "About"
   };
 
   ActiveContent = () => {
@@ -48,7 +48,7 @@ class Layout extends Component {
         <Aux>
           <Row>
             <Col>
-              <BannerHeader text={"Test"}></BannerHeader>
+              <BannerHeader text={"Lewis Dean"}></BannerHeader>
             </Col>
           </Row>
           <Row>
