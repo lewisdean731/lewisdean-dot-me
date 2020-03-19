@@ -10,14 +10,17 @@
 }
 
 .NavigationItem a {
-  color: $colour-blue;
+  color: $colour-grey;
   text-decoration: none;
   display: block;
   transition: 0.3s;
   height: 100%;
 }
 
-.NavigationItem a:hover,
+.NavigationItem a:hover {
+  background-color: $colour-grey;
+  color: $colour-white;
+}
 .NavigationItem a:active,
 .NavigationItem a.active {
   background-color: $colour-blue;
