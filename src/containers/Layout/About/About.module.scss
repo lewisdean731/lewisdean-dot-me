@@ -1,0 +1,8 @@
+@import "../../../styles/resources.scss";
+ .ProfilePicture {
+  &.Placeholder {
+    font-size: 9em;
+    padding: 25px;
+    color: $colour-light-grey;
+  }
+}
