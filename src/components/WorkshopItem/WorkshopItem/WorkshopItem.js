@@ -1,19 +1,16 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import TextHeader from "../../Texts/TextHeader/TextHeader";
 import TextParagraph from "../../Texts/TextParagraph/TextParagraph";
 import Aux from "../../../hoc/Aux";
+import Classes from "./WorkshopItem.module.scss";
+import TextSubheader from "../../Texts/TextParagraph/TextParagraph";
 
 const WorkshopItem = props => {
   return (
-    <Aux>
+    <div className={Classes.WorkshopItem}>
       <Row>
-        <Col>
-          <TextHeader>{props.title}</TextHeader>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
+        <Col className={Classes.SketchfabEmbed}>
           <div className="sketchfab-embed-wrapper">
             <iframe
               title={props.title}
@@ -27,17 +24,22 @@ const WorkshopItem = props => {
             ></iframe>
           </div>
         </Col>
-      </Row>
-      <Row>
         <Col>
+          <TextHeader>{props.title}</TextHeader>
           <TextParagraph>
             {props.description}
             <hr />
-            <a href={props.steam_link}>{props.steam_link_description}</a>
+
           </TextParagraph>
+          <Button className={Classes.Button} href={props.steam_link}>
+            {props.steam_link_description}
+          </Button>
         </Col>
       </Row>
-    </Aux>
+      <Row>
+
+      </Row>
+    </div>
   );
 };
 

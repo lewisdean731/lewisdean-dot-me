@@ -5,9 +5,15 @@
   margin: auto;
   padding: 20px;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
   max-width: 60%;
   &.FullWidth {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .TextSubheader {
+    font-size: 1em;
   }
 }
