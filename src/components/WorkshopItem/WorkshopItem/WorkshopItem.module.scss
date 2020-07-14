@@ -1,24 +1,24 @@
 @import "../../../styles/resources.scss";
 
-.WorkshopItem{
-    padding: 1em;
-    border-radius: 2em;
-    background-color: $colour-light-grey;
+.WorkshopItem {
+  padding: 1em;
+  border-radius: 2em;
+  background-color: $colour-light-grey;
 }
 
-.Button{
-    font-size: 2em;
-    background-color: $colour-blue;
-    border-color: $colour-blue;
-    border-radius: 0.4em;
+.Button {
+  font-size: 2em;
+  background-color: $colour-blue;
+  border-color: $colour-blue;
+  border-radius: 0.4em;
 }
-.Button:hover{
-    background-color: $colour-grey;
-    border-color: $colour-white;
+.Button:hover {
+  background-color: $colour-grey;
+  border-color: $colour-white;
 }
 
 @media (max-width: 1400px) {
-    .SketchfabEmbed {
-      display: none;
-    }
+  .SketchfabEmbed {
+    display: none;
   }
+}

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Classes from "./Layout.module.scss";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
 import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
-import SideDrawer from "../../components/UI/SideDrawer/SideDrawer";
 import TextHeader from "../../components/Texts/TextHeader/TextHeader";
 import UnderConstruction from "../../components/placeholders/UnderConstruction/UnderConstruction";
 import { Row, Col } from "react-bootstrap";
@@ -59,15 +58,11 @@ class Layout extends Component {
           </Row>
           <br />
           <Row className={Classes.FillParentHeight}>
-            <Col md={2}>
-            </Col>
+            <Col md={2}></Col>
             <Col md={8}>
-              <Row>
-                {activeContent}
-              </Row>
+              <Row>{activeContent}</Row>
             </Col>
-            <Col md={2}>
-            </Col>
+            <Col md={2}></Col>
           </Row>
         </Aux>
         <Row>

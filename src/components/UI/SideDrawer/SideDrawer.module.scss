@@ -1,24 +1,24 @@
 @import "../../../styles/resources.scss";
 
 .SideDrawer {
-    position: fixed;
-    z-index: 50;
-    height: 100%;
-    width: 300px;
-    background-color: $colour-blue;
-    transition: transform 0.3s ease-out;
+  position: fixed;
+  z-index: 50;
+  height: 100%;
+  width: 300px;
+  background-color: $colour-blue;
+  transition: transform 0.3s ease-out;
 }
 
 @media (min-width: 500px) {
-    .SideDrawer {
-        display: none
-    }
+  .SideDrawer {
+    display: none;
+  }
 }
 
 .Open {
-    transform: translateX(0)
+  transform: translateX(0);
 }
 
 .Close {
-    transform: translateX(-100%)
+  transform: translateX(-100%);
 }

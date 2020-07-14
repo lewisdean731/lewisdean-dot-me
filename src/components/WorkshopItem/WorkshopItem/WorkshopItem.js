@@ -29,16 +29,13 @@ const WorkshopItem = props => {
           <TextParagraph>
             {props.description}
             <hr />
-
           </TextParagraph>
           <Button className={Classes.Button} href={props.steam_link}>
             {props.steam_link_description}
           </Button>
         </Col>
       </Row>
-      <Row>
-
-      </Row>
+      <Row></Row>
     </div>
   );
 };
