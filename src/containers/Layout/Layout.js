@@ -57,9 +57,9 @@ class Layout extends Component {
               active={this.state.activenavItem}
             ></Toolbar>
           </Row>
+          <br />
           <Row className={Classes.FillParentHeight}>
             <Col md={2}>
-              <SideDrawer />
             </Col>
             <Col md={8}>
               <Row>
