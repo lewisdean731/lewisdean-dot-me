@@ -22,7 +22,7 @@ const about = () => {
       </Row>
       <Row>
         <Col></Col>
-        <Col md={5}>
+        <Col md={8}>
           <TextParagraph FullWidth>
             Originally from Cornwall, I moved to Bournemouth to study Software
             Engineering in 2017. I'm currently working as part of an agile
@@ -38,14 +38,6 @@ const about = () => {
             experience with the atlassian suite of tools (Bitbucket, Bamboo,
             Confluence, and Jira).
           </TextParagraph>
-        </Col>
-        <Col md={3}>
-          <p
-            className={[Classes.ProfilePicture, Classes.Placeholder].join(" ")}
-            href="#"
-          >
-            <FontAwesomeIcon icon={"user"} />
-          </p>
         </Col>
         <Col></Col>
       </Row>
