@@ -1,3 +1,9 @@
 .FillParentHeight {
   flex: 1 1;
 }
+
+@media (max-width: 1920px) {
+    .ColPadding {
+        display: none;
+    }
+}

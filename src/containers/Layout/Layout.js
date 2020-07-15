@@ -58,11 +58,11 @@ class Layout extends Component {
           </Row>
           <br />
           <Row className={Classes.FillParentHeight}>
-            <Col md={2}></Col>
-            <Col md={8}>
+            <Col md={2} className={Classes.ColPadding}></Col>
+            <Col md>
               <Row>{activeContent}</Row>
             </Col>
-            <Col md={2}></Col>
+            <Col md={2} className={Classes.ColPadding}></Col>
           </Row>
         </Aux>
         <Row>

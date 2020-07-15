@@ -6,7 +6,7 @@ import { Col } from "react-bootstrap";
 const BannerFooter = props => {
   return (
     <Col>
-      <footer className={[Classes.Footer, Classes.Box].join(" ")}>
+      <footer className={Classes.Footer}>
         <a className={Classes.Icon} href="https://github.com/lewisdean731">
           <FontAwesomeIcon icon={["fab", "github"]} />
         </a>

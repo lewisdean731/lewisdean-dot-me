@@ -2,21 +2,19 @@
 
 .Footer {
   text-align: center;
-  color: $colour-white;
+  color: $colour-grey;
   margin-top: 50px;
   flex-shrink: 0;
   font-size: 1.5em;
+  padding: 0%;
 }
 
-.Box {
-  padding: 25px;
-  p {
-    color: $colour-grey;
-  }
+.FooterText {
+  font-size: 1em;
 }
 
 .Icon {
-  font-size: 3em;
+  font-size: 2em;
   padding: 50px;
   transition: 0.3s;
   color: $colour-grey;
@@ -26,13 +24,11 @@
   color: $colour-light-grey;
 }
 
-@media (max-width: 1000px) {
-  .Title {
-    font-size: 5em;
+@media only screen and (min-width: 1920px) {
+  .Footer {
+    font-size: 1.5em;
   }
-
-  .Box {
-    padding: 0%;
-    width: 100%;
+  .Icon {
+    font-size: 3em;
   }
 }
