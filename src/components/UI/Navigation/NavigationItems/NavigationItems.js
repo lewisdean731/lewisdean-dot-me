@@ -11,13 +11,13 @@ const NavigationItems = props => {
         About
       </NavigationItem>
       <NavigationItem clicked={props.clicked} active={props.active}>
-        two
+        Experience
       </NavigationItem>
       <NavigationItem clicked={props.clicked} active={props.active}>
         Workshop
       </NavigationItem>
       <NavigationItem clicked={props.clicked} active={props.active}>
-        four
+        Statistics
       </NavigationItem>
       <NavigationItem clicked={props.clicked} active={props.active}>
         Contact

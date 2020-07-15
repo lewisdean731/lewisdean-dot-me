@@ -8,16 +8,6 @@ const about = () => {
   return (
     <div>
       <Row>
-        <Col>
-          <TextHeader>About</TextHeader>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <TextSubheader>Personal Profile</TextSubheader>
-        </Col>
-      </Row>
-      <Row>
         <Col></Col>
         <Col md={8}>
           <TextParagraph FullWidth>

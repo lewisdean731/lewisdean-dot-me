@@ -1,9 +1,13 @@
 @import "../../../styles/resources.scss";
 
 .WorkshopItem {
-  padding: 1em;
-  border-radius: 2em;
+  border-radius: 0em;
   background-color: $colour-light-grey;
+  padding: 1em;
+
+}
+
+.SketchfabEmbed {
 }
 
 .Button {

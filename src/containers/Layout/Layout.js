@@ -21,11 +21,11 @@ class Layout extends Component {
     switch (this.state.activenavItem) {
       case "About":
         return <About />;
-      case "two":
+      case "Experience":
         return <UnderConstruction />;
       case "Workshop":
         return <Workshop />;
-      case "four":
+      case "Statistics":
         return <UnderConstruction />;
       case "Contact":
         return <UnderConstruction />;

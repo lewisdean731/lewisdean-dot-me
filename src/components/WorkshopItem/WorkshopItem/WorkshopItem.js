@@ -2,9 +2,7 @@ import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import TextHeader from "../../Texts/TextHeader/TextHeader";
 import TextParagraph from "../../Texts/TextParagraph/TextParagraph";
-import Aux from "../../../hoc/Aux";
 import Classes from "./WorkshopItem.module.scss";
-import TextSubheader from "../../Texts/TextParagraph/TextParagraph";
 
 const WorkshopItem = props => {
   return (
@@ -26,7 +24,7 @@ const WorkshopItem = props => {
         </Col>
         <Col>
           <TextHeader>{props.title}</TextHeader>
-          <TextParagraph>
+          <TextParagraph FullWidth>
             {props.description}
             <hr />
           </TextParagraph>
