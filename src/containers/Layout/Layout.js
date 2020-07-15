@@ -7,6 +7,7 @@ import UnderConstruction from "../../components/placeholders/UnderConstruction/U
 import { Row, Col } from "react-bootstrap";
 import Toolbar from "../../components/UI/Toolbar/Toolbar";
 import Aux from "../../hoc/Aux";
+import NotFound from "../../components/placeholders/NotFound/NotFound";
 
 // Layouts
 import About from "./About/About";
@@ -30,7 +31,7 @@ class Layout extends Component {
       case "Contact":
         return <UnderConstruction />;
       default:
-        return <TextHeader text={"Content not found..."}></TextHeader>;
+        return <NotFound />;
     }
   };
 
