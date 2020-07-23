@@ -19,9 +19,9 @@
 
 .NavigationItem a:hover {
   background-color: $colour-grey;
-  color: $colour-white;
+  color: $colour-white !important; /* overwrite bootstrap */
 }
-.NavigationItem a:active,
+
 .NavigationItem a.active {
   background-color: $colour-blue;
   color: $colour-white;
