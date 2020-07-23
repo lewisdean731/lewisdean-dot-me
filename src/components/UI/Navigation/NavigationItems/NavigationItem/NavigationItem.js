@@ -3,7 +3,7 @@ import classes from "./NavigationItem.module.scss";
 import { Col } from "react-bootstrap";
 
 const navigationItem = props => (
-  <Col xl={2} className={classes.NavigationItem}>
+  <Col xl className={classes.NavigationItem}>
     <a
       href={props.link}
       onClick={() => props.clicked(props.children)}
