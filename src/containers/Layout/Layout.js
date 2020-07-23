@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import Classes from "./Layout.module.scss";
 import BannerHeader from "../../components/BannerTexts/BannerHeader/BannerHeader";
 import BannerFooter from "../../components/BannerTexts/BannerFooter/BannerFooter";
-import TextHeader from "../../components/Texts/TextHeader/TextHeader";
 import UnderConstruction from "../../components/placeholders/UnderConstruction/UnderConstruction";
 import { Row, Col } from "react-bootstrap";
 import Toolbar from "../../components/UI/Toolbar/Toolbar";
 import Aux from "../../hoc/Aux";
 import NotFound from "../../components/placeholders/NotFound/NotFound";
+import SideDrawer from "../../components/UI/SideDrawer/SideDrawer";
+import DrawerToggle from "../../components/UI/SideDrawer/DrawerToggle/DrawerToggle";
 
 // Layouts
 import About from "./About/About";
@@ -15,7 +16,8 @@ import Workshop from "./Workshop/Workshop";
 
 class Layout extends Component {
   state = {
-    activenavItem: "About"
+    activenavItem: "About",
+    showSideDrawer: false
   };
 
   ActiveContent = () => {
@@ -40,6 +42,16 @@ class Layout extends Component {
     this.setState({ activenavItem: event });
   };
 
+  sideDrawerClosedHandler = () => {
+    this.setState({ showSideDrawer: false });
+  };
+
+  sideDrawerToggleHandler = () => {
+    this.setState(prevState => {
+      return { showSideDrawer: !this.state.showSideDrawer };
+    });
+  };
+
   render() {
     let activeContent = this.ActiveContent();
 
@@ -58,6 +70,13 @@ class Layout extends Component {
             ></Toolbar>
           </Row>
           <br />
+          <DrawerToggle clicked={this.sideDrawerToggleHandler} />
+          <SideDrawer
+            clicked={this.NavigationItemClickHandler}
+            active={this.state.activenavItem}
+            open={this.state.showSideDrawer}
+            closed={this.sideDrawerClosedHandler}
+          ></SideDrawer>
           <Row className={Classes.FillParentHeight}>
             <Col md={2} className={Classes.ColPadding}></Col>
             <Col md>
