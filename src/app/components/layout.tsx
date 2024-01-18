@@ -8,13 +8,13 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <body className="bg-blue4 font-mono flex w-full min-h-screen flex-col justify-between p-6">
+    <div className="font-mono flex w-full min-h-screen flex-col justify-between sm:p-2 md:p-6">
       <div>
         <Header />
         {children}
       </div>
       <Footer />
-    </body>
+    </div>
   )
 }
 
