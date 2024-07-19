@@ -1,22 +1,79 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        light: '#fefcfb',
-        blue1: '#1282a2',
-        blue2: '#034078',
-        blue3: '#001f54',
-        blue4: '#0a1128',
+        'buttery-white': {
+          DEFAULT: '#fffceb',
+          '100': '#fef6c7',
+          '200': '#fdec8a',
+          '300': '#fcdc4d',
+          '400': '#fbca24',
+          '500': '#f5aa0b',
+          '600': '#d98206',
+          '700': '#b45c09',
+          '800': '#92470e',
+          '900': '#783a0f',
+          '950': '#451d03',
+        },
+        shark: {
+          '50': '#f7f7f8',
+          '100': '#efeef0',
+          '200': '#dbdadd',
+          '300': '#bcbabf',
+          '400': '#98959b',
+          '500': '#7b787f',
+          '600': '#646168',
+          '700': '#524f55',
+          '800': '#454448',
+          '900': '#3d3b3f',
+          DEFAULT: '#242325',
+        },
+        'smalt-blue': {
+          '50': '#f3f8f8',
+          '100': '#e0eced',
+          '200': '#c5dadc',
+          '300': '#9dbfc3',
+          '400': '#6e9da2',
+          DEFAULT: '#55868c',
+          '600': '#476c73',
+          '700': '#3e5a60',
+          '800': '#394c51',
+          '900': '#334246',
+          '950': '#1e2a2e',
+        },
+        'dusty-gray': {
+          '50': '#f9f7f8',
+          '100': '#f1eff0',
+          '200': '#e6e2e3',
+          '300': '#d5cccf',
+          '400': '#bbaeb2',
+          DEFAULT: '#a6979c',
+          '600': '#89797e',
+          '700': '#726368',
+          '800': '#605458',
+          '900': '#53494c',
+          '950': '#2a2527',
+        },
+        razzmatazz: {
+          '50': '#fff1f4',
+          '100': '#ffe4e9',
+          '200': '#fecdd8',
+          '300': '#fca5b9',
+          '400': '#fa7295',
+          '500': '#f24172',
+          DEFAULT: '#d81e5b',
+          '700': '#bc144f',
+          '800': '#9e1349',
+          '900': '#871443',
+          '950': '#4b0620',
+        },
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;
