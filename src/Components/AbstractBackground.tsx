@@ -3,13 +3,17 @@ import React, { useRef, useEffect, type FC } from 'react';
 interface AbstractBackgroundProps {
   nodeSize?: number;
   numParticles?: number;
+  sizeChangeSpeed?: number;
   connectDistanceReductionFactor?: number;
+  debugLabels?: boolean;
   className?: string;
 }
 const AbstractBackground: FC<AbstractBackgroundProps> = ({
   nodeSize = 2,
-  numParticles = 200,
+  numParticles = 100,
+  sizeChangeSpeed = 0.02,
   connectDistanceReductionFactor = 7,
+  debugLabels = false,
   className,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -24,6 +28,8 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
     canvas.height = window.innerHeight;
 
     let particles: Particle[] = [];
+    let idCounter = 0;
+
     const mouse = {
       x: null,
       y: null,
@@ -42,6 +48,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
     });
 
     class Particle {
+      id: number;
       x: number;
       y: number;
       size: number;
@@ -50,15 +57,20 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       density: number;
       direction: number;
       velocity: number;
-      constructor(x: number, y: number) {
+      growing: boolean;
+      connections: number;
+      constructor(x: number, y: number, id: number) {
+        this.id = id;
         this.x = x;
         this.y = y;
-        this.size = nodeSize;
+        this.size = 0;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = Math.random() * 30 + 1;
         this.direction = Math.random() * 360;
         this.velocity = Math.random() * 0.5;
+        this.growing = true;
+        this.connections = 0;
       }
 
       draw() {
@@ -71,6 +83,39 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       }
 
       update() {
+        const maxSize =
+          this.connections > 4
+            ? 4 + this.connections / 2
+            : this.connections || 2;
+        const minSize = 2;
+        // Grow if growing
+        if (this.growing) {
+          if (this.size >= minSize) {
+            this.growing = false;
+          }
+          this.size += sizeChangeSpeed;
+        }
+
+        // Grow / shrink depending on connection count
+        if (this.connections > 0 && !this.growing) {
+          if (this.size <= maxSize) {
+            this.size += sizeChangeSpeed;
+          }
+          if (this.size > maxSize) {
+            this.size -= sizeChangeSpeed;
+          }
+        }
+        // Shrink if no conns
+        else if (this.connections === 0 && !this.growing) {
+          if (this.size > 0) {
+            if (this.size - 0.05 < 0) {
+              this.size = 0;
+            } else {
+              this.size -= sizeChangeSpeed;
+            }
+          }
+        }
+
         // Apply velocity
         const rads = this.direction * (Math.PI / 180);
 
@@ -94,6 +139,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       const verticalSpacing = canvas.height / (rows + 1);
 
       particles = [];
+      idCounter = 0;
       for (let i = 0; i <= cols + 1; i++) {
         for (let j = 0; j <= rows + 1; j++) {
           const x =
@@ -101,7 +147,8 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
             (Math.random() - 0.5) * horizontalSpacing * 0.5;
           const y =
             j * verticalSpacing + (Math.random() - 0.5) * verticalSpacing * 0.5;
-          particles.push(new Particle(x, y));
+          particles.push(new Particle(x, y, idCounter));
+          idCounter += 1;
         }
       }
     }
@@ -110,10 +157,15 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       if (!ctx || !canvas) return;
       let opacityValue = 1;
       for (let a = 0; a < particles.length; a++) {
+        const pa = particles[a];
+        if (!pa) return;
+        pa.connections = 0;
         for (let b = a; b < particles.length; b++) {
-          const pa = particles[a];
           const pb = particles[b];
-          if (!pa || !pb) return;
+          if (!pb) return;
+          if (pa.id === pb.id) continue; // skip this iteration
+          //pb.connections = 0;
+
           const distance =
             (pa.x - pb.x) * (pa.x - pb.x) + (pa.y - pb.y) * (pa.y - pb.y);
           if (
@@ -121,6 +173,9 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
             (canvas.width / connectDistanceReductionFactor) *
               (canvas.height / connectDistanceReductionFactor)
           ) {
+            pa.connections += 1;
+            //pb.connections += 1;
+
             opacityValue = 1 - distance / 20000;
             ctx.strokeStyle = 'rgba(36,35,37,' + opacityValue + ')';
             ctx.lineWidth = 1;
@@ -129,6 +184,15 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
             ctx.lineTo(pb.x, pb.y);
             ctx.stroke();
           }
+        }
+        if (debugLabels) {
+          pa.growing && ctx.fillText('NEW', pa.x + 5, pa.y - 20);
+          ctx.fillText(
+            `Size: ${(Math.round(pa.size * 100) / 100).toString()}`,
+            pa.x + 5,
+            pa.y - 10
+          );
+          ctx.fillText(`Connections: ${pa.connections.toString()}`, pa.x + 5, pa.y);
         }
       }
     }
@@ -150,6 +214,18 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       }
     }
 
+    function regenerateNoConns() {
+      particles.forEach((particle) => {
+        if (!particle.growing && particle.size == 0) {
+          particles.push(
+            new Particle(particle.baseX, particle.baseY, idCounter)
+          );
+          idCounter++;
+        }
+      });
+      particles = particles.filter((p) => p.growing || p.size > 0);
+    }
+
     function animate() {
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -157,6 +233,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
         particle.update();
       });
 
+      regenerateNoConns();
       connect();
       bounce();
       requestAnimationFrame(animate);
@@ -172,7 +249,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       );
       window.removeEventListener('resize', init);
     };
-  }, [connectDistanceReductionFactor, nodeSize, numParticles]);
+  }, [connectDistanceReductionFactor, debugLabels, nodeSize, numParticles, sizeChangeSpeed]);
 
   return (
     <canvas
