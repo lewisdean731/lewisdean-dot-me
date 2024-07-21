@@ -58,7 +58,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
         this.baseY = this.y;
         this.density = Math.random() * 30 + 1;
         this.direction = Math.random() * 360;
-        this.velocity = Math.random() * 2;
+        this.velocity = Math.random() * 0.5;
       }
 
       draw() {
