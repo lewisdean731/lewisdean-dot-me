@@ -6,13 +6,13 @@ import Button from './Components/Button';
 const App: FC = () => {
   return (
     <div className={'min-h-screen w-full'}>
-      <AbstractBackground className='bg-buttery-white blur-none' />
-      <Panel className='mt-0 !w-fit border-0 bg-transparent pt-3 font-mono backdrop-blur-xs'>
+      <AbstractBackground className='bg-buttery-white' />
+      <Panel className='mt-0 !w-fit border-0 bg-transparent pt-3 font-mono !backdrop-blur-xs'>
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
       </Panel>
       <br />
-      <Panel className=''>
+      <Panel>
         <h2 className={'text-2xl'}>About Me</h2>
         <p className='mt-2 text-sm'>
           I am a hardworking and determined individual, who is good at problem
@@ -26,7 +26,7 @@ const App: FC = () => {
         </p>
       </Panel>
       <br />
-      <Panel className=''>
+      <Panel>
         <h2 className='text-2xl'>Experience</h2>
         <p className='mt-2'>Software Engineer | 2021 - Present | Raytheon UK</p>
         <ul className='mt-2 list-inside list-disc text-sm'>
@@ -69,9 +69,23 @@ const App: FC = () => {
         </ul>
       </Panel>
       <br />
-      <Panel className=''>
-        <h2 className='mb-2 text-2xl'>Get in Contact</h2>
-        <Button className={'opacity-100'}>Hello World</Button>
+      <Panel className='!w-fit'>
+        <h2 className='mb-2 text-2xl'>Find me</h2>
+        <Button className='ml-0'>
+          <a href='https://github.com/lewisdean731' target='_blank'>
+            LinkedIn
+          </a>
+        </Button>
+        <Button>
+          <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
+            GitHub
+          </a>
+        </Button>
+        <Button>
+          <a href='https://sketchfab.com/yung_lenin' target='_blank'>
+            SketchFab
+          </a>
+        </Button>
       </Panel>
     </div>
   );

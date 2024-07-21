@@ -9,7 +9,7 @@ const Button: FC<ButtonProps> = ({ className, onClick, children }) => {
   return (
     <button
       onClick={onClick}
-      className={`rounded-lg bg-smalt-blue bg-opacity-80 px-4 py-2 text-white duration-100 ease-in-out hover:bg-smalt-blue-700 hover:bg-opacity-100 ${className}`}
+      className={`m-1 rounded-lg bg-smalt-blue bg-opacity-80 px-4 py-2 text-white duration-200 ease-in-out hover:bg-smalt-blue-700 hover:bg-opacity-100 ${className}`}
     >
       {children}
     </button>
