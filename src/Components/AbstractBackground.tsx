@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, type FC } from "react";
+import React, { useRef, useEffect, type FC } from 'react';
 
 interface AbstractBackgroundProps {
   nodeSize?: number;
@@ -17,7 +17,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
@@ -29,12 +29,12 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       y: null,
     } as unknown as { x: number; y: number };
 
-    window.addEventListener("mousemove", (event) => {
+    window.addEventListener('mousemove', (event) => {
       mouse.x = event.x;
       mouse.y = event.y;
     });
 
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       particles = [];
@@ -63,7 +63,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "#242325";
+        ctx.fillStyle = '#242325';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
@@ -122,7 +122,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
               (canvas.height / connectDistanceReductionFactor)
           ) {
             opacityValue = 1 - distance / 20000;
-            ctx.strokeStyle = "rgba(36,35,37," + opacityValue + ")";
+            ctx.strokeStyle = 'rgba(36,35,37,' + opacityValue + ')';
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(pa.x, pa.y);
@@ -167,16 +167,16 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
 
     return () => {
       window.removeEventListener(
-        "mousemove",
-        mouse as unknown as EventListener,
+        'mousemove',
+        mouse as unknown as EventListener
       );
-      window.removeEventListener("resize", init);
+      window.removeEventListener('resize', init);
     };
   }, [connectDistanceReductionFactor, nodeSize, numParticles]);
 
   return (
     <canvas
-      className={`w-full h-full block fixed top-0 left-0 -z-50 ${className}`}
+      className={`fixed left-0 top-0 -z-50 block h-full w-full ${className}`}
       ref={canvasRef}
     ></canvas>
   );

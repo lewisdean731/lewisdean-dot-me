@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from "react";
+import type { FC, PropsWithChildren } from 'react';
 
 interface PanelProps extends PropsWithChildren {
   className?: string;
@@ -7,7 +7,7 @@ interface PanelProps extends PropsWithChildren {
 const Panel: FC<PanelProps> = ({ className, children }) => {
   return (
     <div
-      className={`m-2 p-2 w-1/2 bg-slate-50 border-2 border-slate-50 rounded-xl ${className}`}
+      className={`m-2 w-1/2 rounded-xl border-2 border-dusty-gray-100 border-opacity-5 bg-dusty-gray-100 bg-opacity-75 p-2 backdrop-blur-sm ${className}`}
     >
       {children}
     </div>

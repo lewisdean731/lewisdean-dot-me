@@ -1,24 +1,24 @@
 import type { FC } from 'react';
 import AbstractBackground from './Components/AbstractBackground';
 import Panel from './Components/Panel';
+import Button from './Components/Button';
 
 const App: FC = () => {
   return (
-    <div className={'w-full min-h-screen'}>
-      <AbstractBackground className={'bg-buttery-white blur-xs'} />
+    <div className={'min-h-screen w-full'}>
+      <AbstractBackground className={'bg-buttery-white blur-none'} />
       <Panel
         className={
-          '!w-fit mt-0 pt-3 border-0 !bg-buttery-white-50/75 font-mono'
+          'mt-0 !w-fit border-0 !bg-buttery-white-50/75 pt-3 font-mono'
         }
       >
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
       </Panel>
       <br />
-      <br />
-      <Panel className='opacity-90'>
+      <Panel className=''>
         <h2 className='text-2xl'>About Me</h2>
-        <p className='mt-2'>
+        <p className='mt-2 text-sm'>
           I am a hardworking and determined individual, who is good at problem
           solving and always does their best to complete the given task. I have
           worked at Raytheon UK for the last 3 years and developed a wide range
@@ -30,10 +30,10 @@ const App: FC = () => {
         </p>
       </Panel>
       <br />
-      <Panel className='opacity-90'>
+      <Panel className=''>
         <h2 className='text-2xl'>Experience</h2>
         <p className='mt-2'>Software Engineer | 2021 - Present | Raytheon UK</p>
-        <ul className='list-disc list-inside text-sm mt-2'>
+        <ul className='mt-2 list-inside list-disc text-sm'>
           <li>
             Full-Stack role focusing on React, Typescript and microservices
           </li>
@@ -55,7 +55,7 @@ const App: FC = () => {
         <p className='mt-2'>
           Undergraduate Developer | Jul. 2019 - Sept. 2020 | UKCloud
         </p>
-        <ul className='list-disc list-inside text-sm mt-2'>
+        <ul className='mt-2 list-inside list-disc text-sm'>
           <li>
             Responsible for maintaining the organisation's existing codebase as
             well as owning solutions to new technical challenges throughout the
@@ -73,8 +73,9 @@ const App: FC = () => {
         </ul>
       </Panel>
       <br />
-      <Panel className='opacity-90'>
-        <h2 className='text-2xl'>Get in Contact</h2>
+      <Panel className=''>
+        <h2 className='mb-2 text-2xl'>Get in Contact</h2>
+        <Button className={'opacity-100'}>Hello World</Button>
       </Panel>
     </div>
   );
