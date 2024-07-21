@@ -4,6 +4,9 @@ const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      blur: {
+        xs: '2px',
+      },
       colors: {
         'buttery-white': {
           '50': '#fffceb',
