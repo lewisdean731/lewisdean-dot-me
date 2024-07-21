@@ -11,8 +11,8 @@ interface AbstractBackgroundProps {
 const AbstractBackground: FC<AbstractBackgroundProps> = ({
   nodeDefaultSize = 2,
   numParticles = 200,
-  sizeChangeSpeed = 0.01,
-  maxConnectionDistance = 150,
+  sizeChangeSpeed = 0.005,
+  maxConnectionDistance = 100,
   debugLabels = false,
   className,
 }) => {
@@ -77,7 +77,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
         if (!ctx) return;
         ctx.fillStyle = '#242325';
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size || 0, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
       }
@@ -91,10 +91,9 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
           maxSize = nodeDefaultSize;
         }
 
-        const minSize = 2;
         // Grow if growing
         if (this.growing) {
-          if (this.size >= minSize) {
+          if (this.size >= nodeDefaultSize) {
             this.growing = false;
           }
           this.size += sizeChangeSpeed;
@@ -103,16 +102,16 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
         // Grow / shrink depending on connection count
         if (this.connections > 0 && !this.growing) {
           if (this.size <= maxSize) {
-            this.size += sizeChangeSpeed * this.connections;
+            this.size += sizeChangeSpeed;
           }
           if (this.size > maxSize) {
-            this.size -= sizeChangeSpeed * (this.size > 1 ? this.size : 1);
+            this.size -= sizeChangeSpeed;
           }
         }
         // Shrink if no conns
         else if (this.connections === 0 && !this.growing) {
           if (this.size > 0) {
-            if (this.size - 0.05 < 0) {
+            if (this.size - sizeChangeSpeed < 0) {
               this.size = 0;
             } else {
               this.size -= sizeChangeSpeed;
@@ -208,7 +207,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
           if (!pa || !pb) return;
           const distance =
             (pa.x - pb.x) * (pa.x - pb.x) + (pa.y - pb.y) * (pa.y - pb.y);
-          if (distance < nodeDefaultSize) {
+          if (distance < (pa.size + pb.size) * 4) {
             const papd = pa.direction;
             pa.direction = pb.direction;
             pb.direction = papd;
