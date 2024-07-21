@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       colors: {
         'buttery-white': {
+          '50': '#fffceb',
           DEFAULT: '#fffceb',
           '100': '#fef6c7',
           '200': '#fdec8a',
@@ -30,6 +31,7 @@ const config: Config = {
           '800': '#454448',
           '900': '#3d3b3f',
           DEFAULT: '#242325',
+          '950': '#242325',
         },
         'smalt-blue': {
           '50': '#f3f8f8',
@@ -38,6 +40,7 @@ const config: Config = {
           '300': '#9dbfc3',
           '400': '#6e9da2',
           DEFAULT: '#55868c',
+          '500': '#55868c',
           '600': '#476c73',
           '700': '#3e5a60',
           '800': '#394c51',
@@ -51,6 +54,7 @@ const config: Config = {
           '300': '#d5cccf',
           '400': '#bbaeb2',
           DEFAULT: '#a6979c',
+          '500': '#a6979c',
           '600': '#89797e',
           '700': '#726368',
           '800': '#605458',
@@ -65,6 +69,7 @@ const config: Config = {
           '400': '#fa7295',
           '500': '#f24172',
           DEFAULT: '#d81e5b',
+          '600': '#d81e5b',
           '700': '#bc144f',
           '800': '#9e1349',
           '900': '#871443',

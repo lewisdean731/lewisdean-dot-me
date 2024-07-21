@@ -1,8 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, type FC } from 'react';
 
-const AbstractBackground = () => {
+interface AbstractBackgroundProps {
+  nodeSize?: number;
+  numParticles?: number;
+  connectDistanceReductionFactor?: number;
+  bgClassName: string;
+}
+const AbstractBackground: FC<AbstractBackgroundProps> = ({
+  nodeSize = 2,
+  numParticles = 200,
+  connectDistanceReductionFactor = 7,
+  bgClassName,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const numParticles = 200;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -43,12 +53,12 @@ const AbstractBackground = () => {
       constructor(x: number, y: number) {
         this.x = x;
         this.y = y;
-        this.size = 3;
+        this.size = nodeSize;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = Math.random() * 30 + 1;
         this.direction = Math.random() * 360;
-        this.velocity = Math.random() * 0.5;
+        this.velocity = Math.random() * 2;
       }
 
       draw() {
@@ -68,6 +78,7 @@ const AbstractBackground = () => {
         this.y -= this.velocity * Math.sin(rads);
 
         // Update direction
+        if (this.direction > 360) this.direction = 0;
         this.direction += this.velocity / 5;
 
         this.draw();
@@ -96,19 +107,20 @@ const AbstractBackground = () => {
     }
 
     function connect() {
-      if(!ctx || !canvas) return;
+      if (!ctx || !canvas) return;
       let opacityValue = 1;
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
           const pa = particles[a];
           const pb = particles[b];
-          if(!pa || !pb) return;
+          if (!pa || !pb) return;
           const distance =
-            (pa.x - pb.x) *
-              (pa.x - pb.x) +
-            (pa.y - pb.y) *
-              (pa.y - pb.y);
-          if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+            (pa.x - pb.x) * (pa.x - pb.x) + (pa.y - pb.y) * (pa.y - pb.y);
+          if (
+            distance <
+            (canvas.width / connectDistanceReductionFactor) *
+              (canvas.height / connectDistanceReductionFactor)
+          ) {
             opacityValue = 1 - distance / 20000;
             ctx.strokeStyle = 'rgba(36,35,37,' + opacityValue + ')';
             ctx.lineWidth = 1;
@@ -121,13 +133,32 @@ const AbstractBackground = () => {
       }
     }
 
+    function bounce() {
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          const pa = particles[a];
+          const pb = particles[b];
+          if (!pa || !pb) return;
+          const distance =
+            (pa.x - pb.x) * (pa.x - pb.x) + (pa.y - pb.y) * (pa.y - pb.y);
+          if (distance < nodeSize) {
+            const papd = pa.direction;
+            pa.direction = pb.direction;
+            pb.direction = papd;
+          }
+        }
+      }
+    }
+
     function animate() {
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((particle) => {
         particle.update();
       });
+
       connect();
+      bounce();
       requestAnimationFrame(animate);
     }
 
@@ -135,14 +166,17 @@ const AbstractBackground = () => {
     animate();
 
     return () => {
-      window.removeEventListener('mousemove', mouse);
+      window.removeEventListener(
+        'mousemove',
+        mouse as unknown as EventListener
+      );
       window.removeEventListener('resize', init);
     };
-  }, []);
+  }, [connectDistanceReductionFactor, nodeSize, numParticles]);
 
   return (
     <canvas
-      className={'w-full min-h-screen overflow-hidden'}
+      className={`w-full h-full overflow-hidden absolute top-0 left-0 -z-50 ${bgClassName}`}
       ref={canvasRef}
     ></canvas>
   );
