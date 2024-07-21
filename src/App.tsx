@@ -6,7 +6,7 @@ import Button from './Components/Button';
 const App: FC = () => {
   return (
     <div className={'min-h-screen w-full'}>
-      <AbstractBackground className='bg-buttery-white' debugLabels/>
+      <AbstractBackground className='bg-buttery-white'/>
       <Panel className='mt-0 !w-fit border-0 bg-transparent pt-3 font-mono !backdrop-blur-xs'>
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>

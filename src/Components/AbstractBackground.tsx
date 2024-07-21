@@ -1,18 +1,18 @@
 import React, { useRef, useEffect, type FC } from 'react';
 
 interface AbstractBackgroundProps {
-  nodeSize?: number;
+  nodeDefaultSize?: number;
   numParticles?: number;
   sizeChangeSpeed?: number;
-  connectDistanceReductionFactor?: number;
+  maxConnectionDistance?: number;
   debugLabels?: boolean;
   className?: string;
 }
 const AbstractBackground: FC<AbstractBackgroundProps> = ({
-  nodeSize = 2,
-  numParticles = 100,
-  sizeChangeSpeed = 0.02,
-  connectDistanceReductionFactor = 7,
+  nodeDefaultSize = 2,
+  numParticles = 200,
+  sizeChangeSpeed = 0.01,
+  maxConnectionDistance = 150,
   debugLabels = false,
   className,
 }) => {
@@ -83,10 +83,14 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       }
 
       update() {
-        const maxSize =
-          this.connections > 4
-            ? 4 + this.connections / 2
-            : this.connections || 2;
+        let maxSize = this.connections;
+        if (this.connections > 4) {
+          maxSize = 4 + this.connections / 2;
+        }
+        if (this.connections < nodeDefaultSize) {
+          maxSize = nodeDefaultSize;
+        }
+
         const minSize = 2;
         // Grow if growing
         if (this.growing) {
@@ -99,10 +103,10 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
         // Grow / shrink depending on connection count
         if (this.connections > 0 && !this.growing) {
           if (this.size <= maxSize) {
-            this.size += sizeChangeSpeed;
+            this.size += sizeChangeSpeed * this.connections;
           }
           if (this.size > maxSize) {
-            this.size -= sizeChangeSpeed;
+            this.size -= sizeChangeSpeed * (this.size > 1 ? this.size : 1);
           }
         }
         // Shrink if no conns
@@ -160,23 +164,18 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
         const pa = particles[a];
         if (!pa) return;
         pa.connections = 0;
-        for (let b = a; b < particles.length; b++) {
+        for (let b = 0; b < particles.length; b++) {
           const pb = particles[b];
           if (!pb) return;
           if (pa.id === pb.id) continue; // skip this iteration
           //pb.connections = 0;
 
-          const distance =
-            (pa.x - pb.x) * (pa.x - pb.x) + (pa.y - pb.y) * (pa.y - pb.y);
-          if (
-            distance <
-            (canvas.width / connectDistanceReductionFactor) *
-              (canvas.height / connectDistanceReductionFactor)
-          ) {
+          const distance = Math.sqrt((pa.x - pb.x) ** 2 + (pa.y - pb.y) ** 2);
+          if (distance < maxConnectionDistance) {
             pa.connections += 1;
             //pb.connections += 1;
 
-            opacityValue = 1 - distance / 20000;
+            opacityValue = 1 - distance / maxConnectionDistance;
             ctx.strokeStyle = 'rgba(36,35,37,' + opacityValue + ')';
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -192,7 +191,11 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
             pa.x + 5,
             pa.y - 10
           );
-          ctx.fillText(`Connections: ${pa.connections.toString()}`, pa.x + 5, pa.y);
+          ctx.fillText(
+            `Connections: ${pa.connections.toString()}`,
+            pa.x + 5,
+            pa.y
+          );
         }
       }
     }
@@ -205,7 +208,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
           if (!pa || !pb) return;
           const distance =
             (pa.x - pb.x) * (pa.x - pb.x) + (pa.y - pb.y) * (pa.y - pb.y);
-          if (distance < nodeSize) {
+          if (distance < nodeDefaultSize) {
             const papd = pa.direction;
             pa.direction = pb.direction;
             pb.direction = papd;
@@ -249,7 +252,13 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       );
       window.removeEventListener('resize', init);
     };
-  }, [connectDistanceReductionFactor, debugLabels, nodeSize, numParticles, sizeChangeSpeed]);
+  }, [
+    maxConnectionDistance,
+    debugLabels,
+    nodeDefaultSize,
+    numParticles,
+    sizeChangeSpeed,
+  ]);
 
   return (
     <canvas
