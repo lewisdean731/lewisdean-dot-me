@@ -1,12 +1,16 @@
 import type { FC } from 'react';
-import AbstractBackground from './AbstractBackground';
-import Panel from './Panel';
+import AbstractBackground from './Components/AbstractBackground';
+import Panel from './Components/Panel';
 
 const App: FC = () => {
   return (
     <div className={'w-full min-h-screen'}>
       <AbstractBackground className={'bg-buttery-white blur-xs'} />
-      <Panel className={'!w-fit mt-0 pt-3 border-0 !bg-buttery-white-50/75 font-mono'}>
+      <Panel
+        className={
+          '!w-fit mt-0 pt-3 border-0 !bg-buttery-white-50/75 font-mono'
+        }
+      >
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
       </Panel>
