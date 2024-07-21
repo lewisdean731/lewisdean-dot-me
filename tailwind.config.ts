@@ -4,7 +4,7 @@ const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      blur: {
+      backdropBlur: {
         xs: '2px',
       },
       colors: {

@@ -6,18 +6,14 @@ import Button from './Components/Button';
 const App: FC = () => {
   return (
     <div className={'min-h-screen w-full'}>
-      <AbstractBackground className={'bg-buttery-white blur-none'} />
-      <Panel
-        className={
-          'mt-0 !w-fit border-0 !bg-buttery-white-50/75 pt-3 font-mono'
-        }
-      >
+      <AbstractBackground className='bg-buttery-white blur-none' />
+      <Panel className='mt-0 !w-fit border-0 bg-transparent pt-3 font-mono backdrop-blur-xs'>
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
       </Panel>
       <br />
       <Panel className=''>
-        <h2 className='text-2xl'>About Me</h2>
+        <h2 className={'text-2xl'}>About Me</h2>
         <p className='mt-2 text-sm'>
           I am a hardworking and determined individual, who is good at problem
           solving and always does their best to complete the given task. I have
