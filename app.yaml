@@ -1,8 +1,11 @@
 env: standard
-runtime: nodejs20
+runtime: nodejs22
 service: default
 
 handlers:
+  - url: /assets
+    static_dir: dist/assets
+
   - url: /.*
-    secure: always
-    script: auto
+    static_files: dist/index.html
+    upload: dist/index.html
