@@ -2,7 +2,6 @@ import React, { useRef, useEffect, type FC } from 'react';
 
 interface AbstractBackgroundProps {
   nodeDefaultSize?: number;
-  numParticles?: number;
   sizeChangeSpeed?: number;
   maxConnectionDistance?: number;
   debugLabels?: boolean;
@@ -10,7 +9,6 @@ interface AbstractBackgroundProps {
 }
 const AbstractBackground: FC<AbstractBackgroundProps> = ({
   nodeDefaultSize = 2,
-  numParticles = 200,
   sizeChangeSpeed = 0.005,
   maxConnectionDistance = 100,
   debugLabels = false,
@@ -43,8 +41,8 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      particles = [];
-      init();
+      // particles = []; // causes resets when scrolling on mobile, search bar auto-hide counts as a resize
+      // init();
     });
 
     class Particle {
@@ -84,8 +82,11 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
 
       update() {
         let maxSize = this.connections;
+        if (this.connections > 8) {
+          maxSize = 6 + this.connections / 8;
+        }
         if (this.connections > 4) {
-          maxSize = 4 + this.connections / 2;
+          maxSize = 4 + this.connections / 4;
         }
         if (this.connections < nodeDefaultSize) {
           maxSize = nodeDefaultSize;
@@ -135,9 +136,8 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
 
     function init() {
       if (!canvas) return;
-
-      const cols = Math.sqrt(numParticles);
-      const rows = Math.sqrt(numParticles);
+      const cols = Math.sqrt(canvas.width / 10);
+      const rows = Math.sqrt(canvas.height / 10);
       const horizontalSpacing = canvas.width / (cols + 1);
       const verticalSpacing = canvas.height / (rows + 1);
 
@@ -251,13 +251,7 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
       );
       window.removeEventListener('resize', init);
     };
-  }, [
-    maxConnectionDistance,
-    debugLabels,
-    nodeDefaultSize,
-    numParticles,
-    sizeChangeSpeed,
-  ]);
+  }, [maxConnectionDistance, debugLabels, nodeDefaultSize, sizeChangeSpeed]);
 
   return (
     <canvas
