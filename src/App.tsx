@@ -6,7 +6,7 @@ import Button from './Components/Button';
 const App: FC = () => {
   return (
     <div className={'min-h-screen w-full'}>
-      <AbstractBackground className='bg-buttery-white'/>
+      <AbstractBackground className='bg-buttery-white' />
       <Panel className='mt-0 !w-fit border-0 bg-transparent pt-3 font-mono !backdrop-blur-xs'>
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
@@ -69,23 +69,23 @@ const App: FC = () => {
         </ul>
       </Panel>
       <br />
-      <Panel className='!w-fit'>
-        <h2 className='mb-2 text-2xl'>Find me</h2>
-        <Button className='ml-0'>
-          <a href='https://github.com/lewisdean731' target='_blank'>
-            LinkedIn
-          </a>
-        </Button>
-        <Button>
-          <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
-            GitHub
-          </a>
-        </Button>
-        <Button>
-          <a href='https://sketchfab.com/yung_lenin' target='_blank'>
-            SketchFab
-          </a>
-        </Button>
+      <Panel className='sm:max-xl:w-fit'>
+        <h2 className='mb-2 text-2xl max-sm:text-center'>Find me</h2>
+          <Button className='max-sm:w-full'>
+            <a href='https://github.com/lewisdean731' target='_blank'>
+              LinkedIn
+            </a>
+          </Button>
+          <Button className='max-sm:w-full'>
+            <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
+              GitHub
+            </a>
+          </Button>
+          <Button className='max-sm:w-full'>
+            <a href='https://sketchfab.com/yung_lenin' target='_blank'>
+              SketchFab
+            </a>
+          </Button>
       </Panel>
     </div>
   );
