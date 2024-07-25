@@ -69,19 +69,19 @@ const App: FC = () => {
         </ul>
       </Panel>
       <br />
-      <Panel className='sm:max-xl:w-fit'>
-        <h2 className='mb-2 text-2xl max-sm:text-center'>Find me</h2>
-          <Button className='max-sm:w-full'>
-            <a href='https://github.com/lewisdean731' target='_blank'>
-              LinkedIn
+      <Panel className='md:max-xl:w-fit'>
+        <h2 className='mb-2 text-2xl max-md:text-center'>Find me</h2>
+          <Button className='md:ml-0 max-md:w-full'>
+            <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
+            LinkedIn
             </a>
           </Button>
-          <Button className='max-sm:w-full'>
-            <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
+          <Button className='max-md:w-full'>
+            <a href='https://github.com/lewisdean731' target='_blank'>
               GitHub
             </a>
           </Button>
-          <Button className='max-sm:w-full'>
+          <Button className='max-md:w-full'>
             <a href='https://sketchfab.com/yung_lenin' target='_blank'>
               SketchFab
             </a>
