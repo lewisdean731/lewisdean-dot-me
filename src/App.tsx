@@ -1,3 +1,4 @@
+import React from 'react';
 import type { FC } from 'react';
 import AbstractBackground from './Components/AbstractBackground';
 import Panel from './Components/Panel';
@@ -54,7 +55,7 @@ const App: FC = () => {
         </p>
         <ul className='mt-2 list-inside list-disc text-sm'>
           <li>
-            Responsible for maintaining the organisation's existing codebase as
+            Responsible for maintaining the organisation&apos;s existing codebase as
             well as owning solutions to new technical challenges throughout the
             entire SDLC
           </li>
@@ -73,17 +74,17 @@ const App: FC = () => {
       <Panel className='md:max-xl:w-fit'>
         <h2 className='mb-2 text-2xl max-md:text-center'>Find me</h2>
         <Button className='max-md:w-full md:ml-0'>
-          <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
+          <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank' rel="noreferrer">
             LinkedIn
           </a>
         </Button>
         <Button className='max-md:w-full'>
-          <a href='https://github.com/lewisdean731' target='_blank'>
+          <a href='https://github.com/lewisdean731' target='_blank' rel="noreferrer">
             GitHub
           </a>
         </Button>
         <Button className='max-md:w-full'>
-          <a href='https://sketchfab.com/yung_lenin' target='_blank'>
+          <a href='https://sketchfab.com/yung_lenin' target='_blank' rel="noreferrer">
             SketchFab
           </a>
         </Button>
@@ -93,7 +94,7 @@ const App: FC = () => {
         {/* russianwarship.rip */}
         <IframeResizer
           src='https://russianwarship.rip/widgets/statistics?widgetWrapper=russianwarshiprip-widget&amp;lang=en&amp;charity=armySos&amp;colorTheme=light&amp;speed=700&amp;roundedCorners=none&amp;borderedWidget=none&amp;autoplayWidget=autoplay&amp;stopOnHover=stop'
-          title='russianWarship.RIP - total combat losses of the Russian occupier'
+          title='russianWarship.RIP - Total combat losses of the russian occupier'
           className='w-full'
           license={'GPLv3'}
         />

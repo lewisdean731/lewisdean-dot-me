@@ -1,3 +1,4 @@
+import React from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
 interface PanelProps extends PropsWithChildren {

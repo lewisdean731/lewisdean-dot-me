@@ -184,7 +184,9 @@ const AbstractBackground: FC<AbstractBackgroundProps> = ({
           }
         }
         if (debugLabels) {
-          pa.growing && ctx.fillText('NEW', pa.x + 5, pa.y - 20);
+          if (pa.growing) { 
+            ctx.fillText('NEW', pa.x + 5, pa.y - 20)
+          };
           ctx.fillText(
             `Size: ${(Math.round(pa.size * 100) / 100).toString()}`,
             pa.x + 5,
