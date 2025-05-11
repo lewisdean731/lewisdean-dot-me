@@ -1,3 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --backdrop-blur-xs: 2px;
+
+  --color-buttery-white-50: #fffceb;
+  --color-buttery-white-100: #fef6c7;
+  --color-buttery-white-200: #fdec8a;
+  --color-buttery-white-300: #fcdc4d;
+  --color-buttery-white-400: #fbca24;
+  --color-buttery-white-500: #f5aa0b;
+  --color-buttery-white-600: #d98206;
+  --color-buttery-white-700: #b45c09;
+  --color-buttery-white-800: #92470e;
+  --color-buttery-white-900: #783a0f;
+  --color-buttery-white-950: #451d03;
+  --color-buttery-white: #fffceb;
+
+  --color-shark-50: #f7f7f8;
+  --color-shark-100: #efeef0;
+  --color-shark-200: #dbdadd;
+  --color-shark-300: #bcbabf;
+  --color-shark-400: #98959b;
+  --color-shark-500: #7b787f;
+  --color-shark-600: #646168;
+  --color-shark-700: #524f55;
+  --color-shark-800: #454448;
+  --color-shark-900: #3d3b3f;
+  --color-shark-950: #242325;
+  --color-shark: #242325;
+
+  --color-smalt-blue-50: #f3f8f8;
+  --color-smalt-blue-100: #e0eced;
+  --color-smalt-blue-200: #c5dadc;
+  --color-smalt-blue-300: #9dbfc3;
+  --color-smalt-blue-400: #6e9da2;
+  --color-smalt-blue-500: #55868c;
+  --color-smalt-blue-600: #476c73;
+  --color-smalt-blue-700: #3e5a60;
+  --color-smalt-blue-800: #394c51;
+  --color-smalt-blue-900: #334246;
+  --color-smalt-blue-950: #1e2a2e;
+  --color-smalt-blue: #55868c;
+
+  --color-dusty-gray-50: #f9f7f8;
+  --color-dusty-gray-100: #f1eff0;
+  --color-dusty-gray-200: #e6e2e3;
+  --color-dusty-gray-300: #d5cccf;
+  --color-dusty-gray-400: #bbaeb2;
+  --color-dusty-gray-500: #a6979c;
+  --color-dusty-gray-600: #89797e;
+  --color-dusty-gray-700: #726368;
+  --color-dusty-gray-800: #605458;
+  --color-dusty-gray-900: #53494c;
+  --color-dusty-gray-950: #2a2527;
+  --color-dusty-gray: #a6979c;
+
+  --color-razzmatazz-50: #fff1f4;
+  --color-razzmatazz-100: #ffe4e9;
+  --color-razzmatazz-200: #fecdd8;
+  --color-razzmatazz-300: #fca5b9;
+  --color-razzmatazz-400: #fa7295;
+  --color-razzmatazz-500: #f24172;
+  --color-razzmatazz-600: #d81e5b;
+  --color-razzmatazz-700: #bc144f;
+  --color-razzmatazz-800: #9e1349;
+  --color-razzmatazz-900: #871443;
+  --color-razzmatazz-950: #4b0620;
+  --color-razzmatazz: #d81e5b;
+}

@@ -8,7 +8,7 @@ const App: FC = () => {
   return (
     <div className={'min-h-screen w-full'}>
       <AbstractBackground className='bg-buttery-white' />
-      <Panel className='mt-0 !w-fit border-0 bg-transparent pt-3 font-mono !backdrop-blur-xs'>
+      <Panel className='bg-transparent pt-3 font-mono'>
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
       </Panel>
@@ -89,7 +89,7 @@ const App: FC = () => {
         </Button>
       </Panel>
       <br />
-      <Panel>
+      <Panel className='p-0! bg-transparent'>
         {/* russianwarship.rip */}
         <IframeResizer
           src='https://russianwarship.rip/widgets/statistics?widgetWrapper=russianwarshiprip-widget&amp;lang=en&amp;charity=armySos&amp;colorTheme=light&amp;speed=700&amp;roundedCorners=none&amp;borderedWidget=none&amp;autoplayWidget=autoplay&amp;stopOnHover=stop'
