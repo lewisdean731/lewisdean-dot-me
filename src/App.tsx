@@ -9,7 +9,7 @@ const App: FC = () => {
   return (
     <div className={'min-h-screen w-full'}>
       <AbstractBackground className='bg-buttery-white' />
-      <Panel className='bg-transparent pt-3 font-mono'>
+      <Panel className='bg-transparent  w-fit! pt-3 font-mono'>
         <h1 className='text-6xl'>Lewis Dean</h1>
         <h1 className='m-1 text-2xl'>{'>'} Software Engineer</h1>
       </Panel>
