@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import AbstractBackground from './Components/AbstractBackground';
 import Panel from './Components/Panel';
 import Button from './Components/Button';
+import IframeResizer from '@iframe-resizer/react';
 
 const App: FC = () => {
   return (
@@ -71,22 +72,33 @@ const App: FC = () => {
       <br />
       <Panel className='md:max-xl:w-fit'>
         <h2 className='mb-2 text-2xl max-md:text-center'>Find me</h2>
-          <Button className='md:ml-0 max-md:w-full'>
-            <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
+        <Button className='max-md:w-full md:ml-0'>
+          <a href='https://www.linkedin.com/in/lewisdean731/' target='_blank'>
             LinkedIn
-            </a>
-          </Button>
-          <Button className='max-md:w-full'>
-            <a href='https://github.com/lewisdean731' target='_blank'>
-              GitHub
-            </a>
-          </Button>
-          <Button className='max-md:w-full'>
-            <a href='https://sketchfab.com/yung_lenin' target='_blank'>
-              SketchFab
-            </a>
-          </Button>
+          </a>
+        </Button>
+        <Button className='max-md:w-full'>
+          <a href='https://github.com/lewisdean731' target='_blank'>
+            GitHub
+          </a>
+        </Button>
+        <Button className='max-md:w-full'>
+          <a href='https://sketchfab.com/yung_lenin' target='_blank'>
+            SketchFab
+          </a>
+        </Button>
       </Panel>
+      <br />
+      <Panel>
+        {/* russianwarship.rip */}
+        <IframeResizer
+          src='https://russianwarship.rip/widgets/statistics?widgetWrapper=russianwarshiprip-widget&amp;lang=en&amp;charity=armySos&amp;colorTheme=light&amp;speed=700&amp;roundedCorners=none&amp;borderedWidget=none&amp;autoplayWidget=autoplay&amp;stopOnHover=stop'
+          title='russianWarship.RIP - total combat losses of the Russian occupier'
+          className='w-full'
+          license={'GPLv3'}
+        />
+      </Panel>
+      <br />
     </div>
   );
 };
